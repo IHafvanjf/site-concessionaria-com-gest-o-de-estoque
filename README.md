@@ -1,5 +1,7 @@
 # Portal de Concessionária com Gestão de Estoque em Tempo Real
 
+**Última revisão:** 04-2025
+
 Projeto pedagógico e de portfólio. Site moderno e responsivo para apresentar a loja/equipe e **gerenciar um estoque de veículos** por categorias (novos, seminovos, motos, utilitários).  
 Cada veículo possui galeria de imagens, ficha técnica e suporte a **panorama interno 360°**.  
 Há também a área **“Anuncie seu carro”**, onde usuários enviam anúncios com fotos e 360°; os anúncios passam por moderação, recebem selo “Particular” e status (em análise, publicado, vendido) com avisos por e-mail/WhatsApp.
