@@ -1,0 +1,398 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    background-color: white;
+    font-family: sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  
+
+    padding-top: 90px; 
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0A1F44;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; 
+    height: 90px;
+  }
+  
+  .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: monospace;
+  }
+  
+  .nav-links a:hover {
+    color: #ff3122;
+  }
+  
+  /* Botão do Menu (Mobile) */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1002;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+  
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  .menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 3px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav {
+      padding: 10px 15px;
+      height: 70px;
+      justify-content: space-between;
+    }
+    .logo img {
+      height: 50px;
+    }
+    .nav-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .menu-toggle {
+      display: flex;
+      position: absolute;
+      right: 50px;
+      top: 20px;
+      width: 40px;
+      height: 50px;
+    }
+    .menu-toggle.active {
+      right: 50px;
+      top: 20px;
+    }
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: #0A1F44;
+      text-align: center;
+      padding: 15px 0;
+      display: flex;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+    .nav-links li {
+      padding: 15px 0;
+    }
+    .nav-links a {
+      font-size: 20px;
+    }
+  }
+  
+ 
+.contato-section {
+  width: 100%;
+  margin: 0;
+  padding: 60px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(10,31,68,0.6), rgba(10,31,68,0.6)),
+    url('../img/fundoContato.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+  
+  .logo-circle {
+    width: 170px;
+    height: 170px;
+    background-color: #0A1F44; 
+    border: solid 1px;
+    border-radius: 50%;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+  }
+  
+  .logo-circle img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+  
+
+  .contatos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Cada botão de contato */
+  .contato-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #0A1F44;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 320px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .contato-foto {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;        
+  }
+  
+  /* Nome do Funcionário */
+  .contato-nome {
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 10px; 
+  }
+  
+  /* Ícone do WhatsApp à direita */
+  .contato-whatsapp {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-left: 15px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+    .mobile-search-container {
+      display: none;
+    }
+    .desktop-search .search-button {
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      border-radius: 50%;
+    }
+  }
+  
+.site-footer {
+  background: #0A1F44;
+  color: #eee;
+  font-family: sans-serif;
+  padding: 60px 20px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.site-footer__col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.site-footer__col h4 {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.site-footer__col h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #68c3a3;
+}
+
+.footer-logo img {
+  max-width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-about {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.footer-service-list,
+.footer-service-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-service-list li + li {
+  margin-top: 8px;
+}
+
+.footer-service-list a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-service-list a:hover {
+  color: #fff;
+}
+
+.footer-contact {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.whatsapp-link {
+  color: #68c3a3;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.whatsapp-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer__col p {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.site-footer__col i {
+  margin-right: 8px;
+  color: #68c3a3;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  margin-right: 12px;
+  font-size: 1.3rem;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #68c3a3;
+}
+
+.site-footer__bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 15px;
+  margin-top: 40px;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 40px 0 20px;
+    width: 100%;
+  }
+  
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .site-footer__col {
+    text-align: center;
+    min-width: 100%;
+  }
+  
+  .site-footer__col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

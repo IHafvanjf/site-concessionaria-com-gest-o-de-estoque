@@ -1,0 +1,777 @@
+/* styles.css */
+
+/* ----------------------------------
+   Global Tweaks
+---------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: none;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ----------------------------------
+   Slider de Imagens
+---------------------------------- */
+.image-slider {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.image-slider .swiper-wrapper {
+  display: flex;
+}
+.image-slider .swiper-slide {
+  text-align: center;
+}
+.image-slider img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.image-slider .swiper-button-prev,
+.image-slider .swiper-button-next {
+  color: rgba(0,0,0,0.5);
+  width: 2rem;
+  height: 2rem;
+}
+.image-slider .swiper-button-prev:hover,
+.image-slider .swiper-button-next:hover {
+  color: #000;
+}
+.image-slider .swiper-pagination-bullet {
+  background: rgba(0,0,0,0.3);
+}
+.image-slider .swiper-pagination-bullet-active {
+  background: rgba(0,0,0,0.6);
+}
+@media (max-width: 768px) {
+  .image-slider {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .image-slider .swiper-button-prev,
+  .image-slider .swiper-button-next {
+    display: none;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+}
+.close-modal {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.aprovar-btn, .reprovar-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.aprovar-btn { background-color: #4caf50; color: white; }
+.reprovar-btn { background-color: #f44336; color: white; }
+
+/* ----------------------------------
+   Tabs
+---------------------------------- */
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #000;
+  margin-top: 5vh;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+.tab {
+  flex: 0 0 auto;
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.tab.active {
+  color: #e60000;
+}
+.indicator {
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  background-color: #e60000;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* ----------------------------------
+   Content Sections
+---------------------------------- */
+.content-section {
+  padding: 1rem 0;
+}
+.hidden {
+  display: none;
+}
+
+/* ----------------------------------
+   Month Navigation & Day Selector
+---------------------------------- */
+.month-navigation,
+.days-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #fafafa;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.month-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.month-nav,
+.day-nav {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+.month-nav:hover,
+.day-nav:hover {
+  background-color: #c50000;
+}
+.days-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0.5rem 0;
+  flex: 1;
+}
+.days-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.day-item {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.day-item.active {
+  background-color: #e60000;
+  color: #fff;
+}
+.day-item.today {
+  border: 2px solid #e60000;
+}
+
+/* ----------------------------------
+   Info Row (Financiamento)
+---------------------------------- */
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.info-subtitle {
+  margin-top: 0.3rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ----------------------------------
+   Detail Dots
+---------------------------------- */
+.detail-dots {
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.detail-dots:hover {
+  background-color: #e60000;
+  border-color: #e60000;
+  color: #fff;
+}
+
+/* ----------------------------------
+   Anúncios Forms
+---------------------------------- */
+.anuncios-card {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.anuncios-title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.anuncios-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn-option {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.btn-option.active {
+  opacity: 0.8;
+}
+.anuncio-form {
+  margin: 2rem auto;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+.btn-submit {
+  display: block;
+  margin: 1rem auto;
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* ----------------------------------
+   Slots Table (Consórcio & Cliente)
+---------------------------------- */
+.slots-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+.slots-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.slots-row:nth-child(even) {
+  background-color: #fafafa;
+}
+.slot-item {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ----------------------------------
+   Modal
+---------------------------------- */
+.modal.hidden {
+  display: none;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  position: relative;
+}
+.modal:not(.hidden) .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #555;
+}
+.modal-close:hover {
+  color: #e60000;
+}
+.detail-field {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+.detail-field strong {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+.modal-scrollable-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-top: 1rem;
+}
+.modal-scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-scrollable-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.modal-scrollable-content::-webkit-scrollbar-thumb {
+  background: #e60000;
+  border-radius: 3px;
+}
+.download-btn {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+.download-btn:hover {
+  background-color: #c50000;
+}
+.image-preview {
+  width: 100%;
+  height: 150px;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 0.9rem;
+  background-size: cover;
+  background-position: center;
+}
+.detail-field div {
+  word-break: break-word;
+  margin-top: 0.3rem;
+}
+
+/* ----------------------------------
+   Responsive Adjustments (Mobile)
+---------------------------------- */
+@media (max-width: 600px) {
+  .month-navigation,
+  .days-selector {
+    flex-wrap: nowrap;
+  }
+  .info-row {
+    gap: 0.5rem;
+  }
+  .info-title {
+    font-size: 0.85rem;
+  }
+  .info-subtitle {
+    font-size: 0.8rem;
+  }
+  .slots-header,
+  .slots-row {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .month-nav,
+  .day-nav {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .day-item {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ----------------------------------
+   Anúncios / Formulário Empresa
+---------------------------------- */
+#form-empresa {
+  max-width: 400px;
+}
+.tipo-veiculo {
+  margin-bottom: 20px;
+}
+.opcoes-tipo {
+  display: flex;
+  gap: 10px;
+}
+.botao-tipo {
+  padding: 10px 20px;
+  border: 2px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.botao-tipo.ativo {
+  background-color: #333;
+  color: #fff;
+}
+
+/* ----------------------------------
+   Botão Estoque e Painel Estoque
+---------------------------------- */
+.btn-estoque {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e60000;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* Seção Estoque centralizada e com espaçamento */
+#estoque-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.estoque-header {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.estoque-header h2 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.estoque-add-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* Categorias (Carros/Motos) */
+.estoque-categories {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 1rem;
+  justify-content: center;
+}
+
+.estoque-tab {
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.estoque-tab.ativo {
+  background-color: #e60000;
+  color: #fff;
+}
+
+/* Lista de itens em formato de cards */
+.estoque-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+/* Esconde a lista quando tem a classe hidden */
+.estoque-list.hidden {
+  display: none;
+}
+
+.estoque-item {
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+
+.estoque-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.estoque-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.estoque-info {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.estoque-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.estoque-info p {
+  margin: 0 0 0.25rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Ações de editar e excluir */
+.estoque-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+}
+
+.estoque-actions .action-delete,
+.estoque-actions .action-edit {
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.estoque-actions .action-delete:hover {
+  background-color: rgba(230,0,0,0.1);
+  color: #e60000;
+}
+
+.estoque-actions .action-edit:hover {
+  background-color: rgba(0,122,204,0.1);
+  color: #007acc;
+}
+
+/* Espaçamento dos ícones */
+.estoque-actions .action-delete,
+.estoque-actions .action-edit,
+.estoque-add-icon {
+  margin: 0 0.5rem;
+}
+
+.btn-adicionar {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.btn-adicionar:hover {
+  background-color: #b30000;
+}
+
+.estoque-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.fab-adicionar {
+  position: fixed;
+  bottom: 30px;
+  left: 30px; /* <-- MUDOU PRA ESQUERDA */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #e60000;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.fab-adicionar:hover {
+  background-color: #b30000;
+}
+
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  color: white;
+  display: inline-block;
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+.badge-aprovado {
+  background-color: #28a745;
+}
+.badge-reprovado {
+  background-color: #dc3545;
+}
+.badge-aguardando {
+  background-color: #f0ad4e;
+}
+.slots-header,
+.slots-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 0.5fr;
+}
+
+/* CSS para o botão “Voltar” na seção de Estoque */
+.fab-voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #e60000;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.2s ease;
+}
+
+.fab-voltar:hover {
+  background-color: #c50000;
+}
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Consórcio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img src="../img/logo.png" alt="Logo Concessionária">
+        </a>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="../index.php">Comprar</a></li>
+            <li><a href="../vender/index.html">Vender</a></li>
+            <li><a href="#">Consórcio</a></li>
+            <li><a href="../contato/index.html">Contato</a></li>
+          </ul>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="consorcio-section">
+      <div class="consorcio-bg">
+        <div class="consorcio-overlay">
+          <div class="consorcio-content">
+
+            <div class="consorcio-card">
+              <h1>Agora é a hora de acelerar!</h1>
+
+              <h2>Veículos</h2>
+              <div class="simule-texto">Simule o plano por:</div>
+              <div class="plan-buttons">
+                <button class="plan-btn active" data-plan="parcela">Parcela</button>
+                <button class="plan-btn" data-plan="credito">Crédito</button>
+              </div>
+              <div class="valor-box">
+                <label class="valor-label" for="rangeCredito">Escolha o valor do crédito:</label>
+                <span class="valor-numero">
+                  R$ <span id="valorCreditoTexto">40.000</span>,00
+                </span>
+              </div>
+              
+
+              <input 
+                type="range"
+                id="rangeCredito"
+                min="40000"
+                max="500000"
+                step="1000"
+                value="40000"
+              />
+
+              <button class="btn-simular" id="btnSimular">Simular agora</button>
+            </div>
+          </div> 
+        </div> 
+      </div>
+    </section>
+
+<section class="planos-section">
+  <h2 class="planos-titulo">Conheça nossos planos</h2>
+
+  <div class="plan-carousel">
+    <button id="arrowLeft" class="arrow left">&#10094;</button>
+
+    <div class="plans-wrapper">
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 50 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 100 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 150 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 200 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 250 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 300 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+      <div class="plan-card">
+        <h3>Crédito de</h3>
+        <p class="plan-value">R$ 350 mil</p>
+        <a href="#" class="plan-link">Ver valor da parcela &rarr;</a>
+      </div>
+    </div>
+
+
+    <button id="arrowRight" class="arrow right">&#10095;</button>
+  </div>
+</section>
+
+
+<section class="categorias-section">
+  <div class="categorias-container">
+    <h2 class="categorias-titulo">Como utilizar seu crédito na prática</h2>
+    
+    <div class="categorias-grid">
+
+      <div class="bgblue">
+        <div class="card">
+          <div class="categoria-icon">
+            <img src="../img/moto-gp.png" alt="Ícone 1">
+          </div>
+          <h3>Categoria 1</h3>
+          <p class="categoria-descricao">
+            Adquira seu veículo com as melhores taxas agora!   
+            Financiamento e parcelas que cabem no seu bolso     
+          </p>
+        </div>
+      </div>
+
+      <div class="bgblue">
+        <div class="card">
+          <div class="categoria-icon">
+            <img src="../img/semi_3061718.png" alt="Ícone 2">
+          </div>
+          <h3>Categoria 2</h3>
+          <p class="categoria-descricao">
+            Adquira seu veículo com as melhores taxas agora!   
+            Financiamento e parcelas que cabem no seu bolso     
+          </p>
+        </div>
+      </div>
+
+      <div class="bgblue">
+        <div class="card">
+          <div class="categoria-icon">
+            <img src="../img/transport.png" alt="Ícone 3">
+          </div>
+          <h3>Categoria 3</h3>
+          <p class="categoria-descricao">
+            Adquira seu veículo com as melhores taxas agora!   
+            Financiamento e parcelas que cabem no seu bolso     
+          </p>
+        </div>
+      </div>
+
+      <div class="bgblue">
+        <div class="card">
+          <div class="categoria-icon">
+            <img src="../img/jet-ski.png" alt="Ícone 4">
+          </div>
+          <h3>Categoria 4</h3>
+          <p class="categoria-descricao">
+            Adquira seu veículo com as melhores taxas agora!   
+            Financiamento e parcelas que cabem no seu bolso     
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+
+
+    <div class="site-footer__col">
+      <a href="#" class="footer-logo">
+        <img src="../img/logoAlltech.png" alt="Logo AllTech">
+      </a>
+      <p class="footer-about">
+        A AllTech é a revolução digital que sua empresa precisa! Desenvolvimento de sites e aplicações web sob medida, que transformam ideias em resultados.
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Serviços</h4>
+      <ul class="footer-service-list">
+        <li><a href="#">Desenvolvimento de Sites</a></li>
+        <li><a href="#">Aplicações Web</a></li>
+        <li><a href="#">E-commerce</a></li>
+        <li><a href="#">Otimização de SEO</a></li>
+        <li><a href="#">Manutenção e Suporte</a></li>
+        <li><a href="#">Integração de APIs</a></li>
+        <li><a href="#">Sistemas Personalizados</a></li>
+        <li><a href="#">UX/UI Design</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Fale Conosco</h4>
+      <p class="footer-contact">
+        Precisa de um orçamento ou tem alguma dúvida?<br>
+        Fale conosco agora pelo
+        <a href="https://wa.me/31997941735" target="_blank" class="whatsapp-link">
+          WhatsApp!
+        </a>
+      </p>
+    </div>
+
+    <div class="site-footer__col">
+      <h4>Contato</h4>
+      <p><i class="fa fa-map-marker"></i> Belo Horizonte – MG</p>
+      <p><i class="fa fa-phone"></i> (31) 99794-1735</p>
+      <p><i class="fa fa-envelope"></i> techinnova01@gmail.com</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="https://wa.me/31997941735" target="_blank"><i class="fa fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="site-footer__bottom">
+    <p>© 2025 AllTech. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
