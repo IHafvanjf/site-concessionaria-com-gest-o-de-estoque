@@ -1,9 +1,5 @@
 <?php
 // Dados de conexão
-$host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
 
 // Conecta ao banco
 $conn = new mysqli($host, $user, $pass, $dbname);
@@ -109,3 +105,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+
