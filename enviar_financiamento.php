@@ -4,9 +4,6 @@ header('Content-Type: application/json; charset=utf-8');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 try {
     $host = "localhost";
-    $dbname = "u953537988_concessionaria";
-    $user = "u953537988_concessionaria";
-    $pass = "13579012Victor)";
 
     $conn = new mysqli($host, $user, $pass, $dbname);
     $conn->set_charset('utf8mb4');
@@ -39,3 +36,4 @@ try {
     if (isset($stmt) && $stmt) $stmt->close();
     if (isset($conn) && $conn) $conn->close();
 }
+
