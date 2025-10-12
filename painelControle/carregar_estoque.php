@@ -17,9 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
 
 try {
   $conn = new mysqli($host, $user, $pass, $dbname);
@@ -234,3 +231,4 @@ while ($v = $res->fetch_assoc()) {
 echo '</div>';
 
 $conn->close();
+
