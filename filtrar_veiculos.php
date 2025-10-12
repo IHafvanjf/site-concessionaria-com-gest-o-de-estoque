@@ -1,9 +1,5 @@
 <?php
 $host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
-
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
   die("Erro de conexão: " . $conn->connect_error);
@@ -87,3 +83,4 @@ if ($categoria === 'moto') {
 
 $conn->close();
 ?>
+
