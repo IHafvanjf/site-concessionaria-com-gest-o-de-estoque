@@ -1,8 +1,5 @@
 <?php
 $host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
@@ -52,3 +49,4 @@ if ($result->num_rows > 0) {
     echo "<p>Nenhum anúncio encontrado.</p>";
 }
 ?>
+
