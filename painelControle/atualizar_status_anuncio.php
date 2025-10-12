@@ -17,9 +17,6 @@ $id = intval($data['id']);
 $status = $data['status'];
 
 $host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
@@ -93,3 +90,4 @@ if ($success && $cliente) {
 }
 
 $conn->close();
+
