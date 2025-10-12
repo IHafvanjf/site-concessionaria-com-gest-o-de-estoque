@@ -6,10 +6,6 @@ error_reporting(E_ALL);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $host = "localhost";
-$dbname = "u953537988_concessionaria";
-$user = "u953537988_concessionaria";
-$pass = "13579012Victor)";
-
 try {
   $conn = new mysqli($host, $user, $pass, $dbname);
   $conn->set_charset('utf8mb4');
@@ -48,3 +44,4 @@ try {
   http_response_code(500);
   echo json_encode(['erro' => 'Falha ao listar financiamentos', 'detalhe' => $e->getMessage()]);
 }
+
